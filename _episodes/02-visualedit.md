@@ -122,13 +122,13 @@ OR
 
 No popups will appear in the first case because custom_mark was explicitly specified to be removed. In the second case, a popup menu will appear, and you will be able to select any of the existing marks, making it a more versatile but less efficient hotkey command.
 
-![Custom Mark removed]({{ site.root }}/fig/removeworked.png "Custom Mark Removed")
+![Custom Mark removed]({{ page.root }}/fig/removeworked.png "Custom Mark Removed")
 
 ## Defaults
 
 If you leave the function `ve_edit()` blank, then your keystroke will give you the following popup menu to create an action:
 
-![Edit Event Popup]({{ site.root }}/fig/newremovepopup.png "Edit Event Popup")
+![Edit Event Popup]({{ page.root }}/fig/newremovepopup.png "Edit Event Popup")
 
 From this interface you can either create an **event** or **toggle a channel command**.
 

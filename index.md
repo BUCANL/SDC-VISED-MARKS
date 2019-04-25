@@ -20,7 +20,7 @@ Vised marks is designed based off a **marks** structure that latches onto the ti
 
 Depending on your operating system and the default setting you are using you may need to type the following code into your MATLAB command window before each session. It mostly appears to be required when running MATLAB versions earlier than 2014b. This will ensure that the plots will open correctly, and you can avoid this error.
 
-![Java Error]({{ site.root }}/fig/javaerror.png "Java Error")
+![Java Error]({{ page.root }}/fig/javaerror.png "Java Error")
 
 
 ```matlab

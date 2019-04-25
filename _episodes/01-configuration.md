@@ -59,7 +59,7 @@ All of the select commands above use cell arrays to capture the field data. Make
 
 `function_called('key_action1','key_value1'...'key_action2','key_value2'...);`
 
-![Cell Array Functions Only]({{ site.root }}/fig/cellarrayjustfunc.png "Cell Array - Functions Only")
+![Cell Array Functions Only]({{ page.root }}/fig/cellarrayjustfunc.png "Cell Array - Functions Only")
 
 - Key Select Command **[keyselectcommand]**
     - **[cell array]** each row is string containing a key character followed by "," then a command to execute when the key character is pressed while the pointer is over the data axis.
@@ -69,7 +69,7 @@ All of the select commands above use cell arrays to capture the field data. Make
 
 First is the keyboard key that you are going to assign a certain action to, followed by a comma and the function that will be called with this key press. Typically this will be `ve_eegplot()` or `ve_edit()`. The inputs to these functions are explained in more detail in the [Edit Data Visually](https://bucanl.github.io/SDC-VISED-MARKS/03-visualedit/index.html) episode.
 
-![Key String Command]({{ site.root }}/fig/keystringcommand.png "Key String Command")
+![Key String Command]({{ page.root }}/fig/keystringcommand.png "Key String Command")
 
 ## EEG Plot Options
 
