@@ -14,15 +14,15 @@ The vised configuration editor allows users to customise their vised plot behavi
 
 **Note:** Saving the vised configuration after personalising settings can save a lot of time!
 
-![Manual Scroll Plot Options]({{ site.root }}/fig/manscrollplotoptionspic.png "Manual Scroll Plot Options")
+![Manual Scroll Plot Options]({{ page.root }}/fig/manscrollplotoptionspic.png "Manual Scroll Plot Options")
 
 This page outlines accessing the configuration interface and explaining each of the elements you can modify. In EEGLAB go to **File->Vised Configuration**.
 
-![Find Vised Config]({{ site.root }}/fig/findvisedconfig.png "Find Vised Config")
+![Find Vised Config]({{ page.root }}/fig/findvisedconfig.png "Find Vised Config")
 
 If you already have a configuration file you can load it by clicking Load Vised Config and browsing to the file location.
 
-![Vised config]({{ site.root }}/fig/visedconfig.png "Vised Config")
+![Vised config]({{ page.root }}/fig/visedconfig.png "Vised Config")
 
 ## Visual Editing Options
 
