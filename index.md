@@ -28,9 +28,9 @@ Depending on your operating system and the default setting you are using you may
 ```
 
 > ## Prerequisites
-> - All previous BIDS and BIDS EEG lessons.  
-> - MATLAB  
-> - EEGLAB  
+> - MATLAB
+> - All of the previous BIDS and BIDS EEG lessons
+> - Familiarity with EEGLAB
 {: .prereq}
 
 {% include links.md %}
