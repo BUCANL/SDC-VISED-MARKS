@@ -14,15 +14,15 @@ keypoints:
 
 Editing data using this method is a manual way for you to inspect the scroll data and at the same time mark it up into different components. This method can be used before and after editing the data using scripts, depending on what aspects of the data you are looking at. Marks can help you visually interpret the data and will also save the marks selections on the data that you have made. This information can be used later to isolate or chop up the data into the different selections.
 
-![Vised Scroll Plot]({{ site.root }}/fig/visedmanscrollplot.png "Vised Scroll Plot")
+![Vised Scroll Plot]({{ page.root }}/fig/visedmanscrollplot.png "Vised Scroll Plot")
 
 In order to start directly editing and placing marks, load the scroll data by navigating to **Edit->Visually Edit in Scroll Plot**.
 
-![Edit Vised Drop Down Menu]({{ site.root }}/fig/editvised.png "Edit Vised Drop Down Menu")
+![Edit Vised Drop Down Menu]({{ page.root }}/fig/editvised.png "Edit Vised Drop Down Menu")
 
 The first pop up that shows up should look similar to the figure below. 
 
-![Edit Vised]({{ site.root }}/fig/viseditscrollplot.png "Edit Vised")
+![Edit Vised]({{ page.root }}/fig/viseditscrollplot.png "Edit Vised")
 
 If you haven't already, go check out the Configuration episode to find out what each of these interface fields are. If you have already created or loaded a configuration file then most of these fields will already be complete.
 
@@ -32,7 +32,7 @@ The most important field for this manual editing method is the key select comman
 
 First is the keyboard key that you going to assign a certain action to, followed by a comma and the function that you be calling with this key press. Typically, this is `ve_eegplot()` or `ve_edit()`. These functions are explained on the [Functions Wiki Page](https://github.com/BUCANL/Vised-Marks/wiki/Function-Reference) on Github, as well as in the built in Matlab help command.
 
-![Key Select Command Popup]({{ site.root}}/fig/keyselectcommandpopup.png "Key Select Command Popup")
+![Key Select Command Popup]({{ page.root}}/fig/keyselectcommandpopup.png "Key Select Command Popup")
 
 The `ve_eegplot()` and `ve_edit()` functions both contain different common actions you may want as hotkeys in them, some of which are outlined below. You can call as many key_actions as you would like in the same function. You can also assign a key to call two different functions by simply creating a new line and reusing the same designated key stroke.
 
@@ -72,7 +72,7 @@ The `ve_eegplot()` and `ve_edit()` functions both contain different common actio
 
 Once you have input all of the keystrokes that you want to be editing with, you should make sure that the other configuration settings are also set as desired. Across the top of the pop up page there are four additional selections that were not in the configuration interface:
 
-![Top Part of Visually Edit]({{ site.root}}/fig/toppartofvisuallyedit.png "Top Part of Visually Edit")
+![Top Part of Visually Edit]({{ page.root}}/fig/toppartofvisuallyedit.png "Top Part of Visually Edit")
 
 You can change these fields by typing or by clicking the `| ... |` button and using the selection tool.
 
@@ -102,11 +102,11 @@ To start adding marks, use the winrej highlighting tool and hover your mouse ove
 
 Using an addition mark for the first time will cause the following popup to appear:
 
-![New Mark Info]({{ site.root }}/fig/newmarkinfo.png "New Mark Info")
+![New Mark Info]({{ page.root }}/fig/newmarkinfo.png "New Mark Info")
 
 It should already be populated with most of the information you provided. Make sure you select a color for the mark by typing in the **[R G B]** or by clicking the `|   |` button and selecting from a color pallet. Once you have finished with this pop up, you should see the mark appear at the top of the data.
 
-![Custom Mark Added]({{ site.root }}/fig/markworked.png "Custom Mark Added")
+![Custom Mark Added]({{ page.root }}/fig/markworked.png "Custom Mark Added")
 
 In this example, the navy blue custom_mark (see the name on the right side of the window) that we created above, was added to the area where the winrej had highlighted from approximately 84 to 87 seconds.
 

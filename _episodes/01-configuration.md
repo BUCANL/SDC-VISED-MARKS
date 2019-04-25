@@ -67,7 +67,7 @@ All of the select commands above use cell arrays to capture the field data. Make
      
 `key_press,function_called('key_action1','key_value1'...'key_action2','key_value2'...)`
 
-First is the keyboard key that you are going to assign a certain action to, followed by a comma and the function that will be called with this key press. Typically this will be `ve_eegplot()` or `ve_edit()`. The inputs to these functions are explained in more detail in the [Edit Data Visually](https://bucanl.github.io/SDC-VISED-MARKS/03-visualedit/index.html) episode.
+First is the keyboard key that you are going to assign a certain action to, followed by a comma and the function that will be called with this key press. Typically this will be `ve_eegplot()` or `ve_edit()`. The inputs to these functions are explained in more detail in the [Edit Data Visually](https://bucanl.github.io/SDC-VISED-MARKS/02-visualedit/index.html) episode.
 
 ![Key String Command]({{ page.root }}/fig/keystringcommand.png "Key String Command")
 
