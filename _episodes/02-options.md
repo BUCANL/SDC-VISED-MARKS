@@ -1,28 +1,85 @@
 ---
-title: "Configuration"
-teaching: 10
+title: "Edit Marks Visually"
+teaching: 20
 exercises: 0
 questions:
-- "How do we set up and configure the vised_marks plugin?"
+- "How do we edit marks visually?"
 objectives:
-- "To configure vised marks which will enable editing the marks in a scroll plot."
+- "Learn how to create and purge marks visually."
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- "FIXME"
 ---
 
-The vised configuration editor allows users to customise their vised plot behaviour. The user interface produces a configuration file that can be loaded as the default for future projects.
+## Getting Started
 
-**Note:** Saving the vised configuration after personalising settings can save a lot of time!
+Editing data using this method is a manual way for you to inspect the scroll data and at the same time mark it up into different components. This method can be used before and after editing the data using scripts, depending on what aspects of the data you are looking at. Marks can help you visually interpret the data and will also save the marks selections on the data that you have made. This information can be used later to isolate or chop up the data into the different selections.
 
-![Manual Scroll Plot Options]({{ page.root }}/fig/manscrollplotoptionspic.png "Manual Scroll Plot Options")
+![Vised Scroll Plot]({{ page.root }}/fig/visedmanscrollplot.png "Vised Scroll Plot")
 
-This page outlines accessing the configuration interface and explaining each of the elements you can modify. In EEGLAB go to **File->Vised Configuration**.
+In order to start directly editing and placing marks, load the scroll data by navigating to **Edit->Visually Edit in Scroll Plot**.
 
-![Find Vised Config]({{ page.root }}/fig/findvisedconfig.png "Find Vised Config")
+![Edit Vised Drop Down Menu]({{ page.root }}/fig/editvised.png "Edit Vised Drop Down Menu")
 
-If you already have a configuration file you can load it by clicking Load Vised Config and browsing to the file location.
+The first pop up that shows up should look similar to the figure below. 
 
-![Vised config]({{ page.root }}/fig/visedconfig.png "Vised Config")
+![Edit Vised]({{ page.root }}/fig/viseditscrollplot.png "Edit Vised")
+
+If you haven't already, go check out the Configuration episode to find out what each of these interface fields are. If you have already created or loaded a configuration file then most of these fields will already be complete.
+
+The most important field for this manual editing method is the key select command **[keyselectcommand]** as it is where you can define each of your editing key strokes. You will be creating a cell array of strings that should follow the following pattern, with one [key press/function] on each line:
+
+`key_press,function_called('key_action1','key_value1'...'key_action2','key_value2'...)`
+
+First is the keyboard key that you going to assign a certain action to, followed by a comma and the function that you be calling with this key press. Typically, this is `ve_eegplot()` or `ve_edit()`. These functions are explained on the [Functions Wiki Page](https://github.com/BUCANL/Vised-Marks/wiki/Function-Reference) on Github, as well as in the built in Matlab help command.
+
+![Key Select Command Popup]({{ page.root}}/fig/keyselectcommandpopup.png "Key Select Command Popup")
+
+The `ve_eegplot()` and `ve_edit()` functions both contain different common actions you may want as hotkeys in them, some of which are outlined below. You can call as many key_actions as you would like in the same function. You can also assign a key to call two different functions by simply creating a new line and reusing the same designated key stroke.
+
+### ve_eegplot
+
+|key_action | key_value | Description |
+|-----------|-----------|-------------|
+| 'topoplot'|[figure handle]|	Draws a topographic plot of the time selected |
+| 'drawp'	|[movement direction]|	Refreshes and redraws the figure |
+
+
+> ## Where movement direction is:
+>
+> 0 - to redraw  
+> 1 - to move left by one window  
+> 2 - to move left by one second  
+> 3 - to move right by one second  
+> 4 - to move right by one window  
+>
+> {: .source}
+{: .checklist}
+
+### ve_edit
+
+|key_action | key_value | Description |
+|-----------|-----------|-------------|
+|'quick_event_make' or 'qem'|	['name_of_event'] | Insert event at latency of mouse pointer
+|'quick_channel_flag' or 'qcf'|	['name_of_chan_info_mark_label'] | Flag the channel at mouse pointer with the named mark. |
+|'select_mark' or 'sm'|	['on' or 'off'] |	Select (winrej highlight) the period of time flagged by time_info mark under the mouse pointer. |
+|'add_winrej_marks' or 'awm'|	['name_of_time_info_mark'] | Insert a mark on the data selected by the winrej highlight under the mouse pointer. |
+|'remove_winrej_mark' or 'rwm'|	['name_of_time_info_mark'] | Remove the named time_info mark on for the period of winrej highlight under the mouse pointer. If the 'name_of_time_info_mark' is set as 'pop_select' a pop up selection appears on each use. |
+|'add_page_mark' or 'apm'|	['name_of_time_info_mark'] | Applies a mark to the whole page window. |
+|'remove_page_mark' or 'rpm'| ['name_of_time_info_mark'] |	Removes a mark from the whole page window. |
+|'page_forward' or 'pf'| ['on' or 'off'] |	Moves 1 page forward, based on the time displayed. |
+|'data_move' or 'dm'| ['on' or 'off'] |	Data move from data2 to data array for selected period. |
+
+
+Once you have input all of the keystrokes that you want to be editing with, you should make sure that the other configuration settings are also set as desired. Across the top of the pop up page there are four additional selections that were not in the configuration interface:
+
+![Top Part of Visually Edit]({{ page.root}}/fig/toppartofvisuallyedit.png "Top Part of Visually Edit")
+
+You can change these fields by typing or by clicking the `| ... |` button and using the selection tool.
+
+1. **Channels to display in the window:** In this field, you can select what channels/components you would like to display in the pop up scroll data window. Alternatively you can also use the number of channels to display option in the main config fields and use the side scroll bar to navigate the window.
+2. **Events to display:** This will filter which events will be displayed on the scroll data.
+3. **Mark types to include in rejection:** This section contains the types of marks that you will be rejecting when you click the Update EEG Structure button. By default this field contains manual marks.
+4. At the top right there is a drop down selection between EEG and ICA data types. The marking system works the same way in ICA components mode, except instead of displaying the channel data it will display the component data.
 
 ## Visual Editing Options
 
@@ -91,7 +148,7 @@ The second group of configuration options deal with creating a default setting f
     - **[value]** Seconds (or epochs) of data to display in window (default = 5).
 
 - n Channels to Display **[dispchans]**
-    - **[integer]** Number of channels to display in the activity window (default: from data). If < total number of channels, a vertical slider on the left side of the figure allows vertical data scrolling.
+    - **[integer]** Number of channels to display in the activity window (default: from data). If less than total number of channels, a vertical slider on the left side of the figure allows vertical data scrolling.
 
 - Title
     - Figure title (default = none).
@@ -154,7 +211,6 @@ This last section of the configuration deals with adjusting how your marks will 
 
 - Marks Surface Plot Transparency **[marks_col_alpha]**
     - Alpha is a value between 0 and 1 where 0 = transparent and 1 = opaque (default = .7).
-
 
 {% include links.md %}
 
