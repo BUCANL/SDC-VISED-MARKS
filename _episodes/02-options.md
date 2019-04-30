@@ -24,7 +24,7 @@ The first pop up that shows up should look similar to the figure below.
 
 ![Edit Vised]({{ page.root }}/fig/viseditscrollplot.png "Edit Vised")
 
-If you haven't already, go check out the Configuration episode to find out what each of these interface fields are. If you have already created or loaded a configuration file then most of these fields will already be complete.
+If you haven't already, go check out the [using vised](https://bucanl.github.io/SDC-VISED-MARKS/01-vised/index.html) episode to find out what each of these interface fields are. If you have already created or loaded a configuration file then most of these fields will already be complete.
 
 The most important field for this manual editing method is the key select command **[keyselectcommand]** as it is where you can define each of your editing key strokes. You will be creating a cell array of strings that should follow the following pattern, with one [key press/function] on each line:
 
@@ -80,6 +80,25 @@ You can change these fields by typing or by clicking the `| ... |` button and us
 2. **Events to display:** This will filter which events will be displayed on the scroll data.
 3. **Mark types to include in rejection:** This section contains the types of marks that you will be rejecting when you click the Update EEG Structure button. By default this field contains manual marks.
 4. At the top right there is a drop down selection between EEG and ICA data types. The marking system works the same way in ICA components mode, except instead of displaying the channel data it will display the component data.
+
+If you leave the function `ve_edit()` blank, then your keystroke will give you the following popup menu to create an action:
+
+![Edit Event Popup]({{ page.root }}/fig/newremovepopup.png "Edit Event Popup")
+
+From this interface you can either create an **event** or **toggle a channel command**.
+
+- Event
+    - Make sure the Edit events button is selected.
+    - Under Event type, type the event name.
+    - Click `| Ok |`.
+    - You should see a new event line created where your mouse was positioned.
+  
+- Channel
+    - Make sure the Toggle channel marks status button is selected.
+    - Select the mark designation (manual type is the default, but you can also make this the same as other channel/component marks).
+    - Select the channel/component you wish to apply this to.
+    - Click `| Ok |`.
+    - You should see that the channel/component you selected is now highlighted with the designated mark color.
 
 ## Visual Editing Options
 

@@ -9,7 +9,7 @@ objectives:
 - "To learn how to add, remove, and edit marks in the scroll plot."
 keypoints:
 - "Assign key bindings in the vised config file to enable different actions in the scroll plot."
-- "This plugin allows for quick and versatile flagging of the data in an intuitive environment."
+- "This plugin allows for quick and versatile flagging of the data in an intuitive visual environment."
 --- 
 
 ## Load a Vised Configuration file
@@ -24,7 +24,7 @@ The Vised configuration editor allows users to customise the vised plot behaviou
 
     ![Vised config]({{ page.root }}/fig/visedconfig.png "Vised Config")
 
-3. Click the `| ... |` at the very right side of the Key Select Command field. You will notice the following popup window:
+3. Click the `| ... |` on Linux or Windows or the `| ↕ |` on Mac at the very right side of the `key Select Command` field. You will notice the following popup window:
 
     ![Key Select Command]({{ page.root }}/fig/keyselectcommandpopup.png "Key Select Command Popup")
 
@@ -62,7 +62,13 @@ The Vised configuration editor allows users to customise the vised plot behaviou
 
     ![Visually Edit Option Window]({{ page.root }}/fig/viseditscrollplot.png "Visually Edit Option Window")
 
-4. If there was an ICA performed on the file, you have the option of viewing the component scroll plot in addition to the EEG scroll plot, which displays each component as a waveform rather than each channel. This option can be selected using the drop-down menu in the top right of the window. Once you have selected the type of scroll plot, click `| Ok |` to display the scroll plot:
+4. If there was an ICA performed on the file, you have the option of viewing the component scroll plot in addition to the EEG scroll plot, which displays each component as a waveform rather than each channel. This option can be selected using the drop-down menu in the top right of the window. Once you have selected the type of scroll plot, click `| Ok |` to display the scroll plot.
+
+> ## Note
+> If you are a Mac user, you may need to set a value for the `Y axis spacing` field to avoid an error. Usually, a value between 50 and 100 is a reasonable scale for EEG and between 4 and 20 is reasonable for ICA.
+>
+> {: .source}
+{: .callout}
 
 ## Editing Marks Visually
 
@@ -105,7 +111,7 @@ Marks can either be in the x-axis (time) or in the y-axis (channels/components) 
 
     ![Custom Mark Added]({{ page.root }}/fig/addcustommark.png "Custom Mark Added")
 
-4. In this example, the navy blue custom_mark (see the name on the right side of the window) that we created above, was added to the area where the winrej had highlighted from approximately 84 to 87 seconds.
+4. In this example, the navy blue 'custom_mark' (see the name on the right side of the window) that we created above, was added to the area where the winrej had highlighted from approximately 286 to 288 seconds.
 
 ### Removing a Mark
 
@@ -121,35 +127,8 @@ No popups will appear in the first case because custom_mark was explicitly speci
 
 ![Custom Mark removed]({{ page.root }}/fig/removecustommark.png "Custom Mark Removed")
 
-### Defaults
-
-If you leave the function `ve_edit()` blank, then your keystroke will give you the following popup menu to create an action:
-
-![Edit Event Popup]({{ page.root }}/fig/newremovepopup.png "Edit Event Popup")
-
-From this interface you can either create an **event** or **toggle a channel command**.
-
-- Event
-    - Make sure the Edit events button is selected.
-    - Under Event type, type the event name.
-    - Click `| Ok |`.
-    - You should see a new event line created where your mouse was positioned.
-  
-- Channel
-    - Make sure the Toggle channel marks status button is selected.
-    - Select the mark designation (manual type is the default, but you can also make this the same as other channel/component marks).
-    - Select the channel/component you wish to apply this to.
-    - Click `| Ok |`.
-    - You should see that the channel/component you selected is now highlighted with the designated mark color.
-
 ### Completing the Session
 
-Once you have marked the data as you would like, you will need to click the `| Update EEG Structure |` button at the bottom right of the window. This will take the marks that you have added/removed/modified and update them in the EEG.marks structure, which will essentially save your changes so that the next time the data is loaded you will see your updated marks.
-
-> ## NOTE
-> Clicking `| Update EEG Structure |` does NOT delete/purge the selected channels/components or time points. It merely marks them in the EEG.marks structure, which could later be used to purge the marked data. The file also needs to be explicitly saved after this, because only the EEG structure in MATLAB has been updated, but the file itself has not been saved.
->
-> {: .source}
-{: .callout}
+Once you have marked the data as you would like, you will need to click the `| Update EEG Structure |` button at the bottom right of the window. This will take the marks that you have added/removed/modified and update them in the EEG.marks structure. This will **NOT** save a new file or overwrite the old one. It will only modify the marks structure within EEGLAB. To save the changes to a file, navigate to **File->Save current dataset(s)** to overwrite the old file with the new marks, or navigate to **File->Save current dataset as** to save a new file.
 
 {% include links.md %}
