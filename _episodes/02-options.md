@@ -1,11 +1,11 @@
 ---
-title: "Edit Marks Visually"
+title: "Options"
 teaching: 20
 exercises: 0
 questions:
-- "How do we edit marks visually?"
+- "What are all the options available within the Vised Marks plugin?"
 objectives:
-- "Learn how to create and purge marks visually."
+- "Explore an exhaustive list of all the options available in the Vised Marks plugin."
 keypoints:
 - "FIXME"
 ---

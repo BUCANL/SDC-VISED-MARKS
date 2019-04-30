@@ -8,7 +8,8 @@ objectives:
 - "To configure vised marks which will enable editing the marks in a scroll plot."
 - "To learn how to add, remove, and edit marks in the scroll plot."
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- "Assign key bindings in the vised config file to enable different actions in the scroll plot."
+- "This plugin allows for quick and versatile flagging of the data in an intuitive environment."
 --- 
 
 ## Load a Vised Configuration file
@@ -19,7 +20,7 @@ The Vised configuration editor allows users to customise the vised plot behaviou
 
     ![Find Vised Config]({{ page.root }}/fig/findvisedconfig.png "Find Vised Config")
 
-2. If you already have a configuration file you can load it by clicking **Load vised config** and browsing to the file location. The default configuration file is `derivatives/lossless/code/config/vised_config.cfg`. You may also create your own configuration file by filling in some of the property fields and clicking **Save as** to save the file.
+2. If you already have a configuration file you can load it by clicking `| Load vised config |` and browsing to the file location. The default configuration file is `derivatives/lossless/code/config/vised_config.cfg`. You may also create your own configuration file by filling in some of the property fields and clicking `| Save as |` to save the file.
 
     ![Vised config]({{ page.root }}/fig/visedconfig.png "Vised Config")
 
@@ -36,7 +37,7 @@ The Vised configuration editor allows users to customise the vised plot behaviou
     `M,ve_edit('rwm','custom_mark')`
 
     > ## Note
-    > We used the 'm' and 'M' key pressed as an example, but you can select any keys you want here.
+    > We used the 'm' and 'M' key presses as an example, but you can select any keys you want here. For more information about all the different options for key presses and functions that can be paired, see the episode about [options](https://bucanl.github.io/SDC-VISED-MARKS/02-options/index.html).
     >
     > {: .source}
     {: .callout}
